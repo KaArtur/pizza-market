@@ -27,6 +27,11 @@ public class OpinionService {
     public void saveOpinion( OpinionModel opinionModel) {
     OpinionEntity opinionEntity = OpinionMapperToEntity.toEntity(opinionModel);
         opinionRepository.save(opinionEntity);
-
     }
+
+    public void deleteExample(Long id) {
+        opinionRepository.deleteById(id);
+    }
+
+
 }

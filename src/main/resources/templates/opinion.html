@@ -9,6 +9,9 @@
                     <td>
                         <h3 th:text="${o.getName()}"></h3>
                         <p th:text="${o.getOpinion()}"></p>
+                        <form th:action="@{/opinion/delete/{id}(id=${o.getId()})}" method="post">
+                            <input class="btn-sm" type="submit" value="Usuń">
+                        </form>
                     </td>
                 </tr>
             </table>

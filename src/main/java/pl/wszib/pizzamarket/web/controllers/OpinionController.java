@@ -25,10 +25,25 @@ public class OpinionController {
         return "opinion";
     }
 
-    @PostMapping("opinion")
+    // przy użyciu @ModelAttribute
+    /*@PostMapping("opinion")
     public String saveOpinion(@ModelAttribute ("opinion") OpinionModel opinionModel){
         opinionService.saveOpinion(opinionModel);
     return "redirect:/opinion";
+    }*/
+
+    @PostMapping("opinion")
+    public String saveOpinion(Model model, OpinionModel opinionModel){
+        model.addAttribute("opinion", opinionModel);
+        opinionService.saveOpinion(opinionModel);
+        return "redirect:/opinion";
+    }
+
+    @PostMapping("/opinion/delete/{id}")
+    public String deleteOpinion(@PathVariable Long id){
+       //model.addAttribute("delete", id);
+        opinionService.deleteExample(id);
+        return "redirect:/opinion";
     }
 
 }
