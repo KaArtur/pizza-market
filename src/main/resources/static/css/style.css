@@ -86,6 +86,7 @@ a {
     border: 1px solid var(--primary);
     padding: 15px;
     width: 100%;
+    margin: 5px 0;
 }
 
 #order-content form div {

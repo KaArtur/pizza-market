@@ -12,6 +12,7 @@
                     </td>
                 </tr>
             </table>
+            <h1>Dodaj nową opinię </h1>
             <form method="post" th:action="@{/opinion}" th:object="${opinion}">
                 <div>
                     <input th:field="*{name}" type="text" placeholder="Nazwa" class="input">
@@ -19,7 +20,7 @@
                 <div>
                     <input th:field="*{opinion}" type="text" placeholder="Twoja opinia" class="input">
                 </div>
-                <button type="submit">Zapisz opinię</button>
+                <button class="btn" type="submit">Zapisz opinię</button>
             </form>
         </div>
     </section>
